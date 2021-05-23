@@ -4,7 +4,7 @@ import 'package:sample_flutter/models/user_model.dart';
 import 'package:sample_flutter/services/user_service.dart';
 
 class LoginController extends GetxController {
-  Language languageSelected = Language.th;
+  var languageSelected = Rx<Language>(Language.th);
 
   @override
   void onInit() {
@@ -39,6 +39,6 @@ class LoginController extends GetxController {
   }
 
   setLanguageSelected(Language language) {
-    this.languageSelected = language;
+    this.languageSelected.value = language;
   }
 }
