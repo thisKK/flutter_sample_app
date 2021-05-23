@@ -4,18 +4,12 @@ import 'package:sample_flutter/const/color.dart';
 import 'package:sample_flutter/widgets/logo.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String fname;
-  final String lname;
-  final String email;
-  HomeScreen({
-    Key? key,
-    required this.fname,
-    required this.lname,
-    required this.email,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    var arguments = Get.arguments;
+    final String name = arguments['name'];
+    final String email = arguments['email'];
+
     return Scaffold(
       backgroundColor: AppColors.red,
       body: Container(
@@ -38,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 top: Get.height * 0.1,
               ),
               child: Text(
-                "สวัสดีคุณ$fname $lname",
+                "สวัสดีคุณ $name",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.yellow.shade700,
